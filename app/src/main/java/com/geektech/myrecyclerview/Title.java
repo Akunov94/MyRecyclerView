@@ -1,28 +1,53 @@
 package com.geektech.myrecyclerview;
 
-public class Title {
+import java.io.Serializable;
 
-    String title;
-    String description;
+public class Title implements Serializable {
 
-    public Title(String title, String description) {
-        this.title = title;
-        this.description = description;
+    String name;
+    String lastName;
+    String age;
+    String group;
+    String imageView;
+
+
+    public String getName() {
+        return name;
     }
 
-    public String getTitle() {
-        return title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getDescription() {
-        return description;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public String getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(String imageView) {
+        this.imageView = imageView;
     }
 }

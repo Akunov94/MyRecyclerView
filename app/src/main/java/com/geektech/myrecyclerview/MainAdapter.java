@@ -1,10 +1,12 @@
 package com.geektech.myrecyclerview;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         this.context = context;
     }
 
+    public void addApplication(Title title){
+        list.add(title);
+        notifyDataSetChanged();
+    }
+
 
     @NonNull
     @Override
@@ -36,9 +43,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        Title title = list.get(position);
-        holder.textTitle.setText(title.getTitle());
-        holder.textDesc.setText(title.getDescription());
+        holder.onBind(list.get(position));
+
+
         holder.textMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,18 +85,33 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textTitle;
-        TextView textDesc;
-        TextView textMenu;
+        TextView   txtName;
+        TextView   txtLastName;
+        TextView   txtAge;
+        TextView   txtGroup;
+        TextView   textMenu;
+        ImageView  imageView;
+        Title title;
 
-        public ViewHolder(@NonNull View itemView) {
+          public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textTitle = itemView.findViewById(R.id.txtTitle);
-            textDesc = itemView.findViewById(R.id.txtDesc);
+            txtName = itemView.findViewById(R.id.txtName);
+            txtLastName = itemView.findViewById(R.id.txtLastName);
+            txtAge = itemView.findViewById(R.id.txtAge);
+            txtGroup = itemView.findViewById(R.id.txtGroup);
+            imageView = itemView.findViewById(R.id.image);
             textMenu = itemView.findViewById(R.id.txtOptionMenu);
-
-
         }
+
+           public void onBind(Title title){
+            this.title = title;
+            txtName.setText(title.name);
+            txtLastName.setText(title.lastName);
+            txtAge.setText(title.age);
+            txtGroup.setText(title.group);
+            imageView.setImageURI(Uri.parse(title.imageView));
+        }
+
     }
 }

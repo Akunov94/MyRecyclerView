@@ -11,17 +11,35 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/txtTitle"
+            android:id="@+id/txtName"
+            android:fontFamily="casual"
+            android:textColor="@android:color/holo_orange_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Title"
             />
         <TextView
-            android:id="@+id/txtDesc"
+            android:id="@+id/txtLastName"
+            android:fontFamily="casual"
+            android:textColor="@android:color/holo_green_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:layout_below="@+id/txtTitle"/>
+            android:layout_below="@+id/txtName"/>
+        <TextView
+            android:id="@+id/txtAge"
+            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:layout_below="@+id/txtLastName"/>
+        <TextView
+            android:id="@+id/txtGroup"
+            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Group"
+            android:layout_below="@+id/txtAge"/>
         <TextView
             android:id="@+id/txtOptionMenu"
             android:layout_width="wrap_content"
@@ -31,6 +49,15 @@
             android:paddingLeft="16dp"
             android:text="&#8942;"
             />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:fontFamily="casual"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txtOptionMenu"
+            android:src="@mipmap/ic_launcher"/>
 
     </RelativeLayout>
 

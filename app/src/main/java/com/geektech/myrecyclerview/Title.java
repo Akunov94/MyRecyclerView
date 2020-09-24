@@ -10,7 +10,6 @@ public class Title implements Serializable {
     String group;
     String imageView;
 
-
     public String getName() {
         return name;
     }

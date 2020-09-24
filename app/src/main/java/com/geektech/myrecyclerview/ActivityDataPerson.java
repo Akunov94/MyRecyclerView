@@ -2,6 +2,7 @@ package com.geektech.myrecyclerview;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -44,38 +45,46 @@ public class ActivityDataPerson extends AppCompatActivity {
                 chooseImage();
             }
         });
+        Intent intent = getIntent();
+        if (intent != null) {
+            Title title = (Title) intent.getSerializableExtra("changeResult");
+            if (title != null) {
+                etName.setText(title.name);
+                etLastName.setText(title.lastName);
+                etAge.setText(title.age);
+                etGroup.setText(title.group);
+                imageView.setImageURI(Uri.parse(title.imageView));
+            }
 
+        }
     }
 
     private void chooseImage() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Choose image"),200);
+        startActivityForResult(Intent.createChooser(intent, "Choose image"), 200);
 
     }
 
 
     public void sendResult(View view) {
 
-        String titleName =   etName.getText().toString();
+        String titleName = etName.getText().toString();
         String titleLastName = etLastName.getText().toString();
         String titleAge = etAge.getText().toString();
         String titleGroup = etGroup.getText().toString();
         String image = imageDate.toString();
 
         Intent intent = new Intent();
-
         Title title = new Title();
-
         title.setName(titleName);
         title.setLastName(titleLastName);
         title.setAge(titleAge);
         title.setGroup(titleGroup);
         title.setImageView(image);
-
-        intent.putExtra(KEY,title);
-        setResult(RESULT_OK,intent);
+        intent.putExtra(KEY, title);
+        setResult(RESULT_OK, intent);
         finish();
     }
 

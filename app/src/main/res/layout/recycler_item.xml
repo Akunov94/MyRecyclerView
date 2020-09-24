@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/txtName"
@@ -26,13 +26,16 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:layout_below="@+id/txtName"/>
+
         <TextView
             android:id="@+id/txtAge"
-            android:fontFamily="casual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Age"
-            android:layout_below="@+id/txtLastName"/>
+            android:layout_below="@+id/txtLastName"
+            android:layout_marginTop="-1dp"
+            android:fontFamily="casual"
+            android:text="Age" />
+
         <TextView
             android:id="@+id/txtGroup"
             android:fontFamily="casual"

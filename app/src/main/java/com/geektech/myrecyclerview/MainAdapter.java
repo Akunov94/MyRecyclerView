@@ -105,7 +105,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             txtGroup = itemView.findViewById(R.id.txtGroup);
             imageView = itemView.findViewById(R.id.image);
             textMenu = itemView.findViewById(R.id.txtOptionMenu);
-            imageView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         public void onBind(Title title) {

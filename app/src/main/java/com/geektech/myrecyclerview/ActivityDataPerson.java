@@ -2,7 +2,6 @@ package com.geektech.myrecyclerview;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -53,7 +52,7 @@ public class ActivityDataPerson extends AppCompatActivity {
                 etLastName.setText(title.lastName);
                 etAge.setText(title.age);
                 etGroup.setText(title.group);
-                imageView.setImageURI(Uri.parse(title.imageView));
+//                imageView.setImageURI(Uri.parse(title.imageView));
             }
 
         }
@@ -75,7 +74,6 @@ public class ActivityDataPerson extends AppCompatActivity {
         String titleAge = etAge.getText().toString();
         String titleGroup = etGroup.getText().toString();
         String image = imageDate.toString();
-
         Intent intent = new Intent();
         Title title = new Title();
         title.setName(titleName);
@@ -92,7 +90,6 @@ public class ActivityDataPerson extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 200 && resultCode == RESULT_OK) {
-
             if (data != null) {
                 imageDate = data.getData();
                 imageView.setImageURI(imageDate);

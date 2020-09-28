@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.ItemC
         list = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        for (int i = 0; i <10 ; i++) {
+//            list.add(new Title("Kutman","Akunov",26,24));
+//        }
         adapter = new MainAdapter(list, this);
         adapter.setOnclickListener(this);
        // recyclerView.setHasFixedSize(true);
